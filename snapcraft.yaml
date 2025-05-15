@@ -1,10 +1,10 @@
-name: pc
-version: '24-0.2'
+name: aws-gadget
+version: '24-0.1'
 type: gadget
 base: core24
-summary: PC gadget for generic devices
+summary: AWS gadget for EC2 instances
 description: |
-    This gadget enables generic pc devices to work with Ubuntu Core
+    This gadget enables AWS EC2 instances to run Ubuntu Core
 confinement: strict
 grade: stable
 icon: icon.png
