@@ -5,8 +5,8 @@ This repository contains the official Ubuntu Core gadget snap for AWS EC2 VMs.
 ## Gadget Snaps
 
 Gadget snaps are a special type of snaps that contain device specific support
-code and data. You can read more about them in the snapd wiki
-https://github.com/snapcore/snapd/wiki/Gadget-snap
+code and data. You can read more about them in the ubuntu core documentation
+https://documentation.ubuntu.com/core/reference/gadget-snap-format/
 
 ## Reporting Issues
 
