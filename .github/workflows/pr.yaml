@@ -2,9 +2,9 @@ name: testing
 
 on:
   push:
-    branches: [ main ]
+    branches: [ 24 ]
   pull_request:
-    branches: [ main ]
+    branches: [ 24 ]
 
 jobs:
   snap:
