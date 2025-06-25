@@ -4,11 +4,11 @@ kernel-cmdline:
 
 defaults:
   system:
-    kernel-cmdline:
-      append:
+    system:
+      kernel:
         # Extended the IO timeout on NVME storage to its maximum value
         # see http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nvme-ebs-volumes.html
-        nvme_core.io_timeout=4294967295
+        cmdline-append: nvme_core.io_timeout=4294967295
 
 volumes:
   pc:
