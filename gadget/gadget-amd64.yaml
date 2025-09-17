@@ -10,6 +10,11 @@ defaults:
         # see http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nvme-ebs-volumes.html
         cmdline-append: nvme_core.io_timeout=4294967295
 
+# auto-connect aws-gadget plugs
+connections:
+  - plug: mfDoEMcyOtXRpzrpIFuNDkJ2oAQWOquG:install-mode-etc-sysctl-d-50-aws-gadget-conf
+    slot: system:system-files
+
 volumes:
   pc:
     schema: gpt
