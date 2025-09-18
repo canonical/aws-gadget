@@ -1,0 +1,11 @@
+#!/bin/sh -ux
+
+mkdir -p /etc/sysctl.d/
+
+# Increase ARP table size (see LP:#2060001)
+# Increase maximum number of connection (see LP:#2063538)
+cat << EOF > "/etc/sysctl.d/50-aws-gadget.conf"
+net.ipv4.neigh.default.gc_thresh2=15360
+net.ipv4.neigh.default.gc_thresh3=16384
+net.netfilter.nf_conntrack_max=1048576
+EOF
