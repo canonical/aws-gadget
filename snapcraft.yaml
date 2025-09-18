@@ -28,6 +28,11 @@ plugs:
     interface: system-files
     write:
       - /etc/sysctl.d/50-aws-gadget.conf
+  load-nf-conntrack:
+    interface: kernel-module-load
+    modules:
+      - name: nf_conntrack
+        load: on-boot
 
 hooks:
   install-device:
