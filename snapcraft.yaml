@@ -1,5 +1,5 @@
 name: aws-gadget
-version: '24-0.1'
+adopt-info: cloud-init
 type: gadget
 base: core24
 summary: AWS gadget for EC2 instances
@@ -125,6 +125,12 @@ parts:
       install -m 644 gadget-"${CRAFT_ARCH_BUILD_FOR}".yaml "${CRAFT_PROJECT_DIR}"/gadget.yaml
   cloud-init:
     plugin: nil
+    build-packages:
+      - git
     source: .
     override-build: |
       install -m 644 cloud.conf "${CRAFT_PART_INSTALL}"/cloud.conf
+    override-pull: |
+      craftctl default
+      version=$(git log --date=format:%Y%m%d --pretty=24~git%cd.%h -1)
+      craftctl set version="$version"
