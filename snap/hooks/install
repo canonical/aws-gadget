@@ -1,0 +1,4 @@
+#!/bin/sh -ux
+
+# NOTE: keep this in sync with the value written to 50-aws-gadget.conf from the other hooks
+echo 1048576 > /proc/sys/net/netfilter/nf_conntrack_max
