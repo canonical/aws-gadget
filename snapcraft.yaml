@@ -24,13 +24,6 @@ plugs:
     interface: system-files
     write:
       - /etc/sysctl.d/50-aws-gadget.conf
-  # workaround because the nf_conntrack module gets loaded after systemd-sysctl.service runs (LP:#2125739)
-  proc-sys-net:
-    interface: system-files
-    write:
-      - /proc/sys/net/ipv4/neigh/default/gc_thresh2
-      - /proc/sys/net/ipv4/neigh/default/gc_thresh3
-      - /proc/sys/net/netfilter/nf_conntrack_max
   load-nf-conntrack:
     interface: kernel-module-load
     modules:
@@ -40,11 +33,11 @@ plugs:
 hooks:
   install:
     plugs:
+      - network-control
       - etc-sysctl-d-50-aws-gadget-conf
-      - proc-sys-net
   post-refresh:
     plugs:
-      - proc-sys-net
+      - network-control
       - etc-sysctl-d-50-aws-gadget-conf
 
   prepare-device:
