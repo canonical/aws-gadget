@@ -9,3 +9,8 @@ net.ipv4.neigh.default.gc_thresh2=15360
 net.ipv4.neigh.default.gc_thresh3=16384
 net.netfilter.nf_conntrack_max=1048576
 EOF
+
+# NOTE: keep this in sync with the value written to 50-aws-gadget.conf from the other hooks
+echo 15360 > /proc/sys/net/ipv4/neigh/default/gc_thresh2
+echo 16384 > /proc/sys/net/ipv4/neigh/default/gc_thresh3
+echo 1048576 > /proc/sys/net/netfilter/nf_conntrack_max
