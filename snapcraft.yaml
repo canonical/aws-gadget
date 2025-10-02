@@ -20,10 +20,6 @@ platforms:
 #   priority: always
 
 plugs:
-  install-mode-etc-sysctl-d-50-aws-gadget-conf:
-    interface: system-files
-    write:
-      - /run/mnt/ubuntu-data/system-data/_writable_defaults/etc/sysctl.d/50-aws-gadget.conf
   etc-sysctl-d-50-aws-gadget-conf:
     interface: system-files
     write:
@@ -35,11 +31,13 @@ plugs:
         load: on-boot
 
 hooks:
-  install-device:
+  install:
     plugs:
-      - install-mode-etc-sysctl-d-50-aws-gadget-conf
+      - network-control
+      - etc-sysctl-d-50-aws-gadget-conf
   post-refresh:
     plugs:
+      - network-control
       - etc-sysctl-d-50-aws-gadget-conf
 
   prepare-device:
