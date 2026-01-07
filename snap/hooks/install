@@ -14,3 +14,7 @@ EOF
 echo 15360 > /proc/sys/net/ipv4/neigh/default/gc_thresh2
 echo 16384 > /proc/sys/net/ipv4/neigh/default/gc_thresh3
 echo 1048576 > /proc/sys/net/netfilter/nf_conntrack_max
+
+# Enable linger to allow service snaps to function
+mkdir -p /var/lib/systemd/linger
+touch /var/lib/systemd/linger/ubuntu
