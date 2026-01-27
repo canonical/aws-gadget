@@ -1,12 +1,12 @@
 name: aws-gadget
 adopt-info: cloud-init
 type: gadget
-base: core24
+base: core26
 summary: AWS gadget for EC2 instances
 description: |
     This gadget enables AWS EC2 instances to run Ubuntu Core
 confinement: strict
-grade: stable
+grade: devel
 icon: icon.png
 license: GPL-3.0-or-later
 
@@ -130,5 +130,5 @@ parts:
       install -m 644 cloud.conf "${CRAFT_PART_INSTALL}"/cloud.conf
     override-pull: |
       craftctl default
-      version=$(git log --date=format:%Y%m%d --pretty=24~git%cd.%h -1)
+      version=$(git log --date=format:%Y%m%d --pretty=26~git%cd.%h -1)
       craftctl set version="$version"
