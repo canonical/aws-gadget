@@ -2,13 +2,13 @@ name: testing
 
 on:
   push:
-    branches: [ 24 ]
+    branches: [ 26 ]
   pull_request:
-    branches: [ 24 ]
+    branches: [ 26 ]
 
 jobs:
   snap:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
     - uses: snapcore/action-build@v1
