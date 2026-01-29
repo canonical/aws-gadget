@@ -1,0 +1,14 @@
+name: testing
+
+on:
+  push:
+    branches: [ 26 ]
+  pull_request:
+    branches: [ 26 ]
+
+jobs:
+  snap:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v6
+    - uses: snapcore/action-build@v1
