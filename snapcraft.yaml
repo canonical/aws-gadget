@@ -2,12 +2,11 @@ name: aws-gadget
 adopt-info: cloud-init
 type: gadget
 base: core26
-build-base: devel
 summary: AWS gadget for EC2 instances
 description: |
     This gadget enables AWS EC2 instances to run Ubuntu Core
 confinement: strict
-grade: devel
+grade: stable
 icon: icon.png
 license: GPL-3.0-or-later
 
